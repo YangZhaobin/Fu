@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mapper.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yzb.test.spring.mapper.PersonMapper">
+
+    <select id="find" resultType="com.yzb.test.spring.entity.Person">
+        select * from person where id = #{id} and name = #{name}
+    </select>
+
+</mapper>
