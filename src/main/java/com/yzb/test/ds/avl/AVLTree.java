@@ -77,11 +77,9 @@ public class AVLTree<K extends Comparable<K>, V> {
 
         if (node.key.compareTo(key) > 0) {
             node.left = add(node.left, key, value);
-        }
-        else if (node.key.compareTo(key) < 0) {
+        } else if (node.key.compareTo(key) < 0) {
             node.right = add(node.right, key, value);
-        }
-        else {
+        } else {
             node.value = value;
         }
 
@@ -443,8 +441,7 @@ public class AVLTree<K extends Comparable<K>, V> {
                 successor = node.right; // GC
                 node.right = null;
                 size--;
-            }
-            else if (node.right == null) {
+            } else if (node.right == null) {
                 successor = node.left;
                 node.left = null;  // GC
                 size--;
