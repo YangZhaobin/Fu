@@ -55,10 +55,11 @@ public class AVLTree<K extends Comparable<K>, V> {
         if (node == null)
             return true;
 
-        if (Math.abs(getBalanceFactor(node)) > 1)
+        if (Math.abs(getBalanceFactor(node)) > 1) {
             return false;
-        else
+        } else {
             return isBalanced(node.left) && isBalanced(node.right);
+        }
     }
 
     public void add(K key, V value) {
@@ -83,7 +84,7 @@ public class AVLTree<K extends Comparable<K>, V> {
             node.value = value;
         }
 
-        // 更新height
+        // 更新height!
         node.height = Math.max(getHeight(node.left), getHeight(node.right)) + 1;
 
         // 计算平衡因子 平衡维护
@@ -247,10 +248,11 @@ public class AVLTree<K extends Comparable<K>, V> {
         if (node == null)
             return false;
 
-        if (node.key.compareTo(key) > 0)
+        if (node.key.compareTo(key) > 0) {
             return contains(node.left, key);
-        else if (node.key.compareTo(key) < 0)
+        } else if (node.key.compareTo(key) < 0) {
             return contains(node.right, key);
+        }
         return true;
     }
 
